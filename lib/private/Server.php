@@ -905,10 +905,11 @@ class Server extends ServerContainer implements IServerContainer {
 			// builtin providers
 
 			$config = $c->getConfig();
+			$logger = $c->getLogger();
 			$manager->registerProvider(new CacheMountProvider($config));
 			$manager->registerHomeProvider(new LocalHomeMountProvider());
 			$manager->registerHomeProvider(new ObjectHomeMountProvider($config));
-			$manager->registerRootProvider(new ObjectStorePreviewCacheMountProvider($config));
+			$manager->registerRootProvider(new ObjectStorePreviewCacheMountProvider($logger, $config));
 
 			return $manager;
 		});

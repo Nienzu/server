@@ -58,7 +58,7 @@ class ObjectStorePreviewCacheMountProvider implements IRootMountProvider {
 			foreach ($directoryRange as $child) {
 				$mountPoints[] = new MountPoint(
 					AppdataPreviewObjectStoreStorage::class,
-					'/appdata_' . $instanceId . '/previews/' . $parent . '/' . $child,
+					'/appdata_' . $instanceId . '/preview/' . $parent . '/' . $child,
 					$this->getMultiBucketObjectStore($i),
 					$loader
 				);
@@ -95,7 +95,7 @@ class ObjectStorePreviewCacheMountProvider implements IRootMountProvider {
 		// instantiate object store implementation
 		$config['arguments']['objectstore'] = new $config['class']($config['arguments']);
 
-		$config['arguments']['id'] = $number;
+		$config['arguments']['internal-id'] = $number;
 
 		return $config['arguments'];
 	}

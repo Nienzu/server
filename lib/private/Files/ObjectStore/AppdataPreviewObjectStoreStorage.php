@@ -28,17 +28,17 @@ namespace OC\Files\ObjectStore;
 class AppdataPreviewObjectStoreStorage extends ObjectStoreStorage {
 
 	/** @var string */
-	private $id;
+	private $internalId;
 
 	public function __construct($params) {
-		if (!isset($params['id'])) {
+		if (!isset($params['internal-id'])) {
 			throw new \Exception('missing id in parameters');
 		}
-		$this->id = (string)$params['id'];
+		$this->internalId = (string)$params['internal-id'];
 		parent::__construct($params);
 	}
 
 	public function getId() {
-		return 'object::appdata::preview:' . $this->id;
+		return 'object::appdata::preview:' . $this->internalId;
 	}
 }
