@@ -72,13 +72,13 @@ class ObjectStorePreviewCacheMountProvider implements IRootMountProvider {
 		$fakeRootStorage = new ObjectStoreStorage($rootStorageArguments);
 		$fakeRootStorageJail = new Jail([
 			'storage' => $fakeRootStorage,
-			'root' => '/appdata_' . $instanceId . '/preview/',
+			'root' => '/appdata_' . $instanceId . '/preview',
 		]);
 
 		// add a fallback location to be able to fetch existing previews from the old bucket
 		$mountPoints[] = new MountPoint(
 			$fakeRootStorageJail,
-			'/appdata_' . $instanceId . '/preview/old-multibucket/',
+			'/appdata_' . $instanceId . '/preview/old-multibucket',
 			null,
 			$loader
 		);
