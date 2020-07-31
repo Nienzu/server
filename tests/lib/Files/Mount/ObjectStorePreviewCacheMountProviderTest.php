@@ -100,5 +100,7 @@ class ObjectStorePreviewCacheMountProviderTest extends \Test\TestCase {
 		// do some sanity checks if they have correct mount point paths
 		$this->assertEquals('/appdata_INSTANCEID/preview/0/0/', $mounts[0]->getMountPoint());
 		$this->assertEquals('/appdata_INSTANCEID/preview/2/5/', $mounts[37]->getMountPoint());
+		// also test the path of the fake bucket
+		$this->assertEquals('/appdata_INSTANCEID/preview/old-multibucket/', $mounts[256]->getMountPoint());
 	}
 }
