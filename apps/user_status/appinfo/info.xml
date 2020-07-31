@@ -25,6 +25,7 @@
     <dependencies>
         <nextcloud min-version="20" max-version="20"/>
     </dependencies>
+    <default_enable />
     <background-jobs>
         <job>OCA\UserStatus\BackgroundJob\ClearOldStatusesBackgroundJob</job>
     </background-jobs>
